@@ -112,7 +112,7 @@ def test_NewsFilter():
    assert picked_car_name == opened_car_name
 
 
-
+# Тест поиска (наличие искомого слова в заголовках результатов)
 def test_ProperSearch():
 
    driver = test_Login()
@@ -137,7 +137,7 @@ def test_ProperSearch():
 
    assert passed
 
-   
+
    
 #test_NewsFilter()
 #test_Login()
