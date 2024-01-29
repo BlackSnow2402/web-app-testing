@@ -129,7 +129,11 @@ def test_ProperSearch():
 
    for header in article_headers:
       if search_text not in header.text.lower():
+         print('В заголовке: ' + header.text + ' не найден текст ' + search_text) 
          passed = False
+
+   if passed:
+      print("Тест пройден успешно.")
 
    assert passed
 
