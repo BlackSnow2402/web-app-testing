@@ -113,6 +113,28 @@ def test_NewsFilter():
 
 
 
+def test_ProperSearch():
 
+   driver = test_Login()
+
+   search_text = "abc"
+
+   driver.find_element(By.NAME, "text").send_keys(search_text)
+   driver.find_element(By.XPATH, "//button[contains(text(), 'Найти')]").click()
+
+   time.sleep(2)
+
+   article_headers = driver.find_element(By.CSS_SELECTOR, '[data-slot="site-search.results"]').find_elements(By.TAG_NAME, "h3")
+   passed = True
+
+   for header in article_headers:
+      if search_text not in header.text.lower():
+         passed = False
+
+   assert passed
+
+   
+   
 #test_NewsFilter()
 #test_Login()
+#test_ProperSearch()
